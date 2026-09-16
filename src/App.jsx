@@ -17,24 +17,30 @@ function App() {
     <div className="app">
 
       {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="brand-logo">
-       <img src={logo} alt="Yatraana" />
-        </div>
-        
+<nav className="navbar">
+  <div className="brand-logo">
+    <img src={logo} alt="Yatraana" />
+  </div>
 
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#trips">Categories</a>
-          <a href="#treks">Departure</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Reviews</a>
-        </div>
+  <div className="nav-links">
+    <a href="#home">Home</a>
+    <a href="#trips">Categories</a>
+    <a href="#treks">Departure</a>
+    <a href="#about">About Us</a>
+    <a href="#reviews">Reviews</a>
+  </div>
 
-        <button className="book-btn">
-          Book Now
-        </button>
-      </nav>
+  <button
+    className="book-btn"
+    onClick={() => {
+      document.querySelector('.contact-section')?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }}
+  >
+    Book Now
+  </button>
+</nav>
 
 
       {/* HERO */}
@@ -58,20 +64,29 @@ function App() {
 
   <button
     className={activeButton === 'trips' ? 'primary-btn' : 'outline-btn'}
-    onClick={() => setActiveButton('trips')}
+    onClick={() => {
+      setActiveButton('trips')
+      document.querySelector('#trips')?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }}
   >
     Explore Trips →
   </button>
 
   <button
     className={activeButton === 'treks' ? 'primary-btn' : 'outline-btn'}
-    onClick={() => setActiveButton('treks')}
+    onClick={() => {
+      setActiveButton('treks')
+      document.querySelector('#treks')?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }}
   >
     Explore Treks →
   </button>
 
 </div>
-
         </div>
 
       </section>
@@ -362,6 +377,54 @@ function App() {
         </div>
 
       </section>
+
+      {/* REVIEWS */}
+<section className="reviews-section" id="reviews">
+
+  <p className="section-label">
+    TRAVELLER STORIES
+  </p>
+
+  <h2>
+    What Our <span>Travellers Say</span>
+  </h2>
+
+  <div className="reviews-grid">
+
+    <div className="review-card">
+      <div className="stars">★★★★★</div>
+      <p>
+        “The entire trip was beautifully planned. Everything felt
+        smooth, comfortable and memorable.”
+      </p>
+      <h4>Priya Sharma</h4>
+      <small>Manali Traveller</small>
+    </div>
+
+    <div className="review-card">
+      <div className="stars">★★★★★</div>
+      <p>
+        “Loved the experience! The destination, stay and overall
+        planning made the trip truly special.”
+      </p>
+      <h4>Rahul Mehta</h4>
+      <small>Chakrata Traveller</small>
+    </div>
+
+    <div className="review-card">
+      <div className="stars">★★★★★</div>
+      <p>
+        “Yatraana made travelling so easy. Can't wait for my next
+        adventure with them!”
+      </p>
+      <h4>Ananya Verma</h4>
+      <small>Jibhi Traveller</small>
+    </div>
+
+  </div>
+
+</section>
+
 {/* CONTACT */}
 <section className="contact-section">
 
