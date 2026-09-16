@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [selectedTrip, setSelectedTrip] = useState(null)
+  const [activeButton, setActiveButton] = useState(null)
   return (
     <div className="app">
 
@@ -46,15 +47,23 @@ function App() {
 
           
 
-          <div className="hero-buttons">
-            <button className="primary-btn">
-              Explore Trips →
-            </button>
+         <div className="hero-buttons">
 
-            <button className="outline-btn">
-              Explore Treks
-            </button>
-          </div>
+  <button
+    className={activeButton === 'trips' ? 'primary-btn' : 'outline-btn'}
+    onClick={() => setActiveButton('trips')}
+  >
+    Explore Trips →
+  </button>
+
+  <button
+    className={activeButton === 'treks' ? 'primary-btn' : 'outline-btn'}
+    onClick={() => setActiveButton('treks')}
+  >
+    Explore Treks →
+  </button>
+
+</div>
 
         </div>
 
@@ -115,7 +124,7 @@ function App() {
             <div className="trip-info">
               <p>HIMACHAL PRADESH</p>
 
-              <h3>Manali Escape</h3>
+              <h3 style={{ color: '#D71920' }}>Manali Escape</h3>
 
               <div className="trip-details">
                 <span>5 Days</span>
@@ -135,7 +144,7 @@ function App() {
             <div className="trip-info">
               <p>UTTARAKHAND</p>
 
-              <h3>Chakrata</h3>
+             <h3 style={{ color: '#D71920' }}>Chakrata</h3>
 
               <div className="trip-details">
                 <span>2 Days</span>
@@ -155,7 +164,7 @@ function App() {
             <div className="trip-info">
               <p>GOA</p>
 
-              <h3>Goa Getaway</h3>
+              <h3 style={{ color: '#D71920' }}>Goa Getaway</h3>
 
               <div className="trip-details">
                 <span>4 Days</span>
@@ -193,7 +202,9 @@ function App() {
 
         <div className="trek-grid">
 
-          <div className="trek-card">
+          <div className="trek-card"
+           onClick={() => setSelectedTrip('Madhyamaheswar')}
+           >
             <div className="trek-image kedarkantha"></div>
 
             <div className="trek-content">
@@ -204,7 +215,9 @@ function App() {
           </div>
 
 
-          <div className="trek-card">
+          <div className="trek-card"
+           onClick={() => setSelectedTrip('Yulla Kanda')}
+           >
             <div className="trek-image hampta"></div>
 
             <div className="trek-content">
@@ -215,7 +228,9 @@ function App() {
           </div>
 
 
-          <div className="trek-card">
+          <div className="trek-card"
+           onClick={() => setSelectedTrip('Chopta Tungnath')}
+           >
             <div className="trek-image kasol"></div>
 
             <div className="trek-content">
@@ -316,14 +331,64 @@ function App() {
         </div>
 
       </section>
+{/* CONTACT */}
+<section className="contact-section">
 
+  <p className="section-label">
+    LET'S CONNECT
+  </p>
+
+  <h2>
+    Plan Your <span>Next Journey</span>
+  </h2>
+
+  <div className="contact-cards">
+
+    <a href="tel:7415665172" className="contact-card">
+      <div className="contact-icon">☎</div>
+      <div>
+        <small>CALL US</small>
+        <p>7415665172</p>
+      </div>
+    </a>
+
+    <a href="mailto:yatraana11@gmail.com" className="contact-card">
+      <div className="contact-icon">✉</div>
+      <div>
+        <small>EMAIL US</small>
+        <p>yatraana11@gmail.com</p>
+      </div>
+    </a>
+
+    <a
+      href="https://www.instagram.com/yatraana.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-card"
+    >
+      <div className="contact-icon instagram-icon">
+  <span></span>
+</div>
+      <div>
+        <small>FOLLOW US</small>
+        <p>@yatraana.in</p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
 
       {/* CTA */}
 <section
   className="cta"
-  style={{ backgroundImage: `url(${ctaBg})` }}
-
-> 
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      url(${ctaBg})
+    `
+  }}
+>
   <div className="cta-logo">
   <img src={logo} alt="Yatraana" />
 </div>
