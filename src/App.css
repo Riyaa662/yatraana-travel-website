@@ -301,17 +301,7 @@ background-repeat: no-repeat;
   gap: 25px;
 }
 
-.trip-card {
-  background: white;
 
-  border: 1px solid #eeeeee;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  transition: 0.35s;
-}
 
 .trip-card:hover {
   transform: translateY(-8px);
@@ -320,14 +310,7 @@ background-repeat: no-repeat;
     0 20px 50px rgba(0,0,0,0.1);
 }
 
-.trip-image {
-  height: 280px;
 
-  background-size: cover;
-  background-position: center 80%;
-
-  position: relative;
-}
 
 .trip-image span {
   position: absolute;
@@ -364,14 +347,11 @@ background-repeat: no-repeat;
     url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=85");
 }
 
-.trip-info {
-  padding: 23px;
-}
 
 .trip-info > p {
-  color: #D71920;
+  color:#D71920 ;
 
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 800;
 
   letter-spacing: 2px;
@@ -379,8 +359,8 @@ background-repeat: no-repeat;
 
 .trip-info h3 {
   font-family: 'Playfair Display', serif;
-
-  font-size: 27px;
+  color : white;
+  font-size: 30px;
 
   margin: 8px 0 18px;
 }
@@ -388,8 +368,8 @@ background-repeat: no-repeat;
 .trip-details {
   display: flex;
   justify-content: center;
-  color: #161616;
-  font-size: 13px;
+  color: white;
+  font-size: 15px;
 }
 
 
@@ -1010,26 +990,14 @@ footer small {
   gap: 25px;
 }
 
-.dham-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.3s;
-}
+
 
 .dham-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
 }
 
-.dham-image {
-  height: 260px;
-  background: #ddd;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-}
+
 
 .dham-image span {
   position: absolute;
@@ -1045,7 +1013,18 @@ footer small {
 }
 
 .dham-content {
+  position: relative;
+  margin-top: -125px;
+  z-index: 2;
+
   padding: 24px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .dham-content > p {
@@ -1071,4 +1050,370 @@ footer small {
   .dham-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* CATEGORIES */
+
+.categories {
+  padding: 100px 8%;
+  background: #fff8ee;
+}
+
+.categories-heading {
+  margin-bottom: 45px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.category-card {
+  background: white;
+  padding: 40px 32px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid rgba(215, 25, 32, 0.08);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+.category-icon {
+  font-size: 42px;
+  margin-bottom: 22px;
+}
+
+.category-card h3 {
+  color: #D71920;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.category-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.category-card span {
+  color: #D71920;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 800px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   BOOKING FORM
+========================= */
+
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.booking-form {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff8ee;
+  border-radius: 24px;
+  padding: 42px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.booking-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #0e0d0d;
+  margin-bottom: 8px;
+}
+
+.booking-form h2 span {
+  color: #D71920;
+}
+
+.booking-subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.booking-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #D71920;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-close:hover {
+  transform: rotate(90deg);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #222;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.form-group label span {
+  color: #888;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 13px 14px;
+  background: white;
+  color: #222;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #D71920;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.08);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.booking-submit {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #D71920;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(215, 25, 32, 0.25);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .booking-overlay {
+    padding: 15px;
+  }
+
+  .booking-form {
+    padding: 30px 22px;
+    border-radius: 20px;
+  }
+
+  .booking-form h2 {
+    font-size: 34px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+}
+/* =========================
+   TRIPS + DHAMS CARD STYLE
+   SAME AS TREKS
+========================= */
+
+.trip-card,
+.dham-card {
+  height: 500px;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  color: white;
+  cursor: pointer;
+  transition: 0.35s;
+  background: transparent;
+}
+
+.trip-card:hover,
+.dham-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+
+/* IMAGE */
+.trip-image,
+.dham-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* DARK GRADIENT */
+.trip-card::after,
+.dham-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 25%,
+    rgba(0,0,0,0.9)
+  );
+  z-index: 1;
+}
+
+
+/* TOP BADGES — SAME POSITION */
+.trip-image span,
+.dham-image span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #D71920;
+  color: white;
+  padding: 7px 11px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+
+/* BOTTOM CONTENT */
+.trip-info,
+.dham-content {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+
+  padding: 0;
+
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+}
+
+
+/* LOCATION / SMALL TEXT */
+.trip-info > p,
+.dham-content > p {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+
+/* TITLE */
+.trip-info h3,
+.dham-content h3 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  margin: 8px 0 18px;
+}
+
+
+/* DETAILS */
+.trip-details,
+.dham-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+  color: white;
+  font-size: 13px;
+}
+
+.dham-details span {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   CATEGORY EXPLORE BUTTONS
+   SAME LOOK AS VIEW ALL
+========================= */
+
+.category-card > span {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 18px;
+  border: 1px solid #D71920;
+  border-radius: 6px;
+  color: #D71920;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.category-card:hover > span {
+  background: #D71920;
+  color: white;
+  transform: translateY(-2px);
 }
