@@ -13,6 +13,8 @@ import './App.css'
 function App() {
   const [selectedTrip, setSelectedTrip] = useState(null)
   const [activeButton, setActiveButton] = useState(null)
+  const [showAllTrips, setShowAllTrips] = useState(false)
+  const [showAllTreks, setShowAllTreks] = useState(false)
   return (
     <div className="app">
 
@@ -127,8 +129,11 @@ function App() {
             </h2>
           </div>
 
-          <button className="view-btn">
-            View All →
+          <button
+            className="view-btn"
+             onClick={() => setShowAllTrips(!showAllTrips)}
+           >
+             {showAllTrips ? 'Show Less ↑' : 'View All →'}
           </button>
 
         </div>
@@ -205,6 +210,43 @@ function App() {
           </div>
 
         </div>
+        {showAllTrips && (
+  <>
+          <div className="trip-card"
+             onClick={() => setSelectedTrip('Kasol Escape')}
+          >
+          <div className="trip-image">
+             <span>COMING SOON</span>
+           </div>
+
+           <div className="trip-info">
+            <p>HIMACHAL PRADESH</p>
+           <h3 style={{ color: '#D71920' }}>Kasol Escape</h3>
+
+           <div className="trip-details">
+             <span>3 Days-2 Nights</span>
+          </div>
+          </div>
+         </div>
+
+           <div className="trip-card"
+            onClick={() => setSelectedTrip('Rishikesh') }
+           >
+           <div className="trip-image">
+             <span>COMING SOON</span>
+           </div>
+
+            <div className="trip-info">
+            <p>UTTARAKHAND</p>
+           <h3 style={{ color: '#D71920' }}>Rishikesh</h3>
+
+           <div className="trip-details">
+             <span>2 Days-1 Night</span>
+             </div>
+             </div>
+             </div>
+             </>
+)}
 
       </section>
 
@@ -224,8 +266,11 @@ function App() {
             </h2>
           </div>
 
-          <button className="view-btn">
-            View All →
+          <button
+             className="view-btn"
+              onClick={() => setShowAllTreks(!showAllTreks)}
+          >
+              {showAllTreks ? 'Show Less ↑' : 'View All →'}
           </button>
 
         </div>
@@ -290,6 +335,85 @@ function App() {
 
       </section>
         
+        {/* DHAM YATRAS */}
+<section className="dhams" id="dhams">
+
+  <div className="section-heading">
+
+    <div>
+      <p className="section-label">
+        DIVINE JOURNEYS
+      </p>
+
+      <h2>
+        Dham <span>Yatras</span>
+      </h2>
+    </div>
+
+    <button className="view-btn">
+      View All →
+    </button>
+
+  </div>
+
+  <div className="dham-grid">
+
+    <div
+      className="dham-card"
+      onClick={() => setSelectedTrip('Kedarnath Dham')}
+    >
+      <div className="dham-image">
+        <span>POPULAR</span>
+      </div>
+
+      <div className="dham-content">
+        <p>UTTARAKHAND</p>
+        <h3>Kedarnath Dham</h3>
+        <div className="dham-details">
+          <span>Starting ₹6,499</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      className="dham-card"
+      onClick={() => setSelectedTrip('Do Dham (Kedar–Badri)')}
+    >
+      <div className="dham-image">
+        <span>POPULAR</span>
+      </div>
+
+      <div className="dham-content">
+        <p>UTTARAKHAND</p>
+        <h3>Do Dham</h3>
+        <div className="dham-details">
+          <span>Starting ₹9,999</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      className="dham-card"
+      onClick={() => setSelectedTrip('Char Dham Yatra')}
+    >
+      <div className="dham-image">
+        <span>EXPERIENCE</span>
+      </div>
+
+      <div className="dham-content">
+        <p>UTTARAKHAND</p>
+        <h3>Char Dham Yatra</h3>
+        <div className="dham-details">
+          <span>Starting ₹19,999</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* TRIP POPUP */}
