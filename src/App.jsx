@@ -1,4 +1,11 @@
 import { useState } from 'react'
+import heroBg from './assets/hero-bg.png'
+import manaliImg from './assets/manali.png'
+import chakrataImg from './assets/chakrata.png'
+import jibhiTirthan from './assets/jibhi-tirthan.png'
+import madhyamaheswarImg from './assets/madhyamaheswar.png'
+import yullaKandaImg from './assets/yulla-kanda.png'
+import choptaTungnathImg from './assets/chopta-tungnath.png'
 import logo from './assets/yatraana-logo.png'
 import ctaBg from './assets/cta-bg.png'
 import './App.css'
@@ -117,8 +124,11 @@ function App() {
           <div className="trip-card"
             onClick={() => setSelectedTrip('Manali Escape')}
             >
-            <div className="trip-image manali">
-              <span>BESTSELLER</span>
+            <div
+             className="trip-image"
+              style={{ backgroundImage: `url(${manaliImg})` }}
+              >
+             <span>BESTSELLER</span>
             </div>
 
             <div className="trip-info">
@@ -127,7 +137,7 @@ function App() {
               <h3 style={{ color: '#D71920' }}>Manali Escape</h3>
 
               <div className="trip-details">
-                <span>5 Days</span>
+                <span>3 Days-2 Nights</span>
                 
               </div>
             </div>
@@ -137,8 +147,11 @@ function App() {
           <div className="trip-card"
             onClick={() => setSelectedTrip('Chakrata')}
             >
-            <div className="trip-image kashmir">
-              <span>POPULAR</span>
+            <div
+            className="trip-image"
+             style={{ backgroundImage: `url(${chakrataImg})` }}
+             >
+           <span>POPULAR</span>
             </div>
 
             <div className="trip-info">
@@ -147,7 +160,7 @@ function App() {
              <h3 style={{ color: '#D71920' }}>Chakrata</h3>
 
               <div className="trip-details">
-                <span>2 Days</span>
+                <span>2 Days-1 Night</span>
               
               </div>
             </div>
@@ -155,19 +168,22 @@ function App() {
 
 
           <div className="trip-card"
-            onClick={() => setSelectedTrip('Goa')}
+            onClick={() => setSelectedTrip('Jibhi-Tirthan')}
             >
-            <div className="trip-image goa">
-              <span>NEW</span>
+            <div
+              className="trip-image"
+               style={{ backgroundImage: `url(${jibhiTirthan})` }}
+                 >
+             <span>NEW</span>
             </div>
 
             <div className="trip-info">
-              <p>GOA</p>
+              <p>HIMANCHAL PRADESH</p>
 
-              <h3 style={{ color: '#D71920' }}>Goa Getaway</h3>
+              <h3 style={{ color: '#D71920' }}>Jibhi-Tirthan</h3>
 
               <div className="trip-details">
-                <span>4 Days</span>
+                <span>3 Days-2 Nights</span>
                 
               </div>
             </div>
@@ -205,7 +221,11 @@ function App() {
           <div className="trek-card"
            onClick={() => setSelectedTrip('Madhyamaheswar')}
            >
-            <div className="trek-image kedarkantha"></div>
+            <div
+               className="trek-image"
+               style={{ backgroundImage: `url(${madhyamaheswarImg})` }}
+            >
+            </div>
 
             <div className="trek-content">
               <p>UTTARAKHAND</p>
@@ -218,7 +238,11 @@ function App() {
           <div className="trek-card"
            onClick={() => setSelectedTrip('Yulla Kanda')}
            >
-            <div className="trek-image hampta"></div>
+            <div
+             className="trek-image"
+             style={{ backgroundImage: `url(${yullaKandaImg})` }}
+            >
+            </div>
 
             <div className="trek-content">
               <p>HIMACHAL PRADESH</p>
@@ -231,7 +255,14 @@ function App() {
           <div className="trek-card"
            onClick={() => setSelectedTrip('Chopta Tungnath')}
            >
-            <div className="trek-image kasol"></div>
+           <div
+            className="trek-image"
+            style={{
+              backgroundImage: `url(${choptaTungnathImg})`,
+            backgroundPosition: 'center 100%'
+              }}
+            >
+            </div>
 
             <div className="trek-content">
               <p>UTTARAKHAND</p>
